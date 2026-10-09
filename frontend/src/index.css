@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --color-rose-50: #fff1f3;
+  --color-rose-100: #ffe0e6;
+  --color-rose-200: #ffc2cf;
+  --color-rose-300: #fd9bb2;
+  --color-rose-400: #fb7a96;
+  --color-rose-500: #f0476f;
+  --color-rose-600: #d92d58;
+  --color-rose-700: #b3204a;
+  --color-lavender-50: #f6f3ff;
+  --color-lavender-100: #ebe5ff;
+  --color-lavender-200: #d8ccff;
+  --color-lavender-300: #bfaeff;
+  --color-lavender-400: #a58df5;
+  --color-lavender-500: #8566e8;
+  --color-lavender-600: #6c4bd1;
+  --color-ink-50: #f7f5f9;
+  --color-ink-100: #ece8f1;
+  --color-ink-200: #d9d3e1;
+  --color-ink-400: #8d849a;
+  --color-ink-600: #5b5266;
+  --color-ink-900: #2a2433;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  @apply font-sans text-ink-900 bg-linear-to-br from-rose-50 via-white to-lavender-50 min-h-screen antialiased;
+  background-attachment: fixed;
+}
+
+::selection { background: var(--color-rose-200); }
+
+.card {
+  @apply bg-white/90 backdrop-blur rounded-2xl border border-white shadow-[0_8px_30px_rgb(60,30,80,0.06)];
+}
+
+.input {
+  @apply w-full px-4 py-2.5 bg-white border border-ink-200 rounded-xl text-ink-900 placeholder:text-ink-400
+    focus:outline-none focus:ring-4 focus:ring-rose-100 focus:border-rose-400 transition-all;
+}
+
+.chip {
+  @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-lavender-50 text-lavender-600 border border-lavender-100;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
