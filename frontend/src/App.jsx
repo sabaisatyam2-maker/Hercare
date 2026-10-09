@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+﻿import { Navigate, Route, Routes } from 'react-router-dom';
 import { AdminRoute, GuestRoute, ProtectedRoute } from './routes/Guards';
 import { MainLayout } from './components/Layouts';
 
@@ -21,6 +21,9 @@ import MyPrograms from './pages/MyPrograms';
 import EnrollmentDetail from './pages/EnrollmentDetail';
 import Favorites from './pages/Favorites';
 import NotFound from './pages/NotFound';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+
 
 import AdminLayout from './pages/admin/AdminLayout';
 import AdminOverview from './pages/admin/AdminOverview';
@@ -73,8 +76,11 @@ export default function App() {
         <Route path="/my-programs/:id" element={<ProtectedRoute><EnrollmentDetail /></ProtectedRoute>} />
         <Route path="/favorites" element={<ProtectedRoute><Favorites /></ProtectedRoute>} />
 
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
 }
+
